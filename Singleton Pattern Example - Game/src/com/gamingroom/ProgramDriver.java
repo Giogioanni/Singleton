@@ -1,0 +1,31 @@
+package com.gamingroom;
+// Giogioanni Morales SNHU CS230 11/4/2023 
+/**
+ * Application start-up program
+ * 
+ */
+public class ProgramDriver {
+	
+	/**
+	 * The one-and-only main() method
+	 * 
+	 * @param args command line arguments
+	 */
+	public static void main(String[] args) {
+		
+		// FIXME: obtain reference to the singleton instance
+		GameService service = GameService.getInstance(); // replace null with ???
+		
+		System.out.println("\nAbout to test initializing game data...");
+		
+		// initialize with some game data
+		Game game1 = service.addGame("Game #1");
+		System.out.println(game1);
+		Game game2 = service.addGame("Game #2");
+		System.out.println(game2);
+		
+		// use another class to prove there is only one instance
+		SingletonTester tester = new SingletonTester();
+		tester.testSingleton();
+	}
+}
